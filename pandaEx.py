@@ -37,7 +37,7 @@ def data_cleaning(df):
     # print(df.tail(5))
     print(df[['company', 'price', 'horsepower']].head(40))
     print(df.isnull().sum())
-data_cleaning(df)
+#data_cleaning(df)
 
 
 ###--------------------------------------------------------------------------
@@ -101,3 +101,45 @@ def question6():
     get_max_price_df = car_company_df['company', 'price'].max()
     print(get_max_price_df)
 #question6()
+
+def question7():
+    car_company_df = df.groupby('company')
+    avg_mile_df = car_company_df['company', 'average-mileage'].mean()
+    print(avg_mile_df)
+#question7()
+
+def question8():
+    sorted_price = df.sort_values('price', ascending=False)
+    print(sorted_price)
+#question8()
+
+def question9():
+    GermanCars = {'Company': ['Ford', 'Mercedes', 'BMW', 'Audi'],
+              'Price': [23412, 33434, 12223, 90491]
+              }
+    carsDF1 = pd.DataFrame.from_dict(GermanCars)
+
+    JapanCars = {'Company': ['Toyota', 'Honda', 'Nissan', 'Mitsubishi '],
+             'Price': [29995, 23600, 61500 , 58900]
+             }
+    carsDF2 = pd.DataFrame.from_dict(JapanCars)
+
+    carDF = pd.concat([carsDF1, carsDF2], keys=["Germany", "Japan"])
+    print(carDF)
+#question9()
+def question10():
+    Car_Price = {'Company': ['Toyota', 'Honda', 'BMV', 'Audi'],
+                 'Price': [23845, 17995, 135925, 71400]}
+    carPriceDF = pd.DataFrame.from_dict(Car_Price)
+
+    car_Horsepower = {'Company': ['Toyota', 'Honda', 'BMV', 'Audi'],
+                      'horsepower': [141, 80, 182, 160]}
+    carPowerDF = pd.DataFrame.from_dict(car_Horsepower)
+
+    #Like Join in query...
+    carsDF = pd.merge(carPriceDF, carPowerDF, on="Company")
+    print(carsDF)
+question10()
+
+
+
