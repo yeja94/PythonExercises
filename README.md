@@ -1,2 +1,2 @@
 # PythonExercises
-My personal practice on python 
+My personal experience in using python for data analysis. 
