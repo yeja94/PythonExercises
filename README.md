@@ -1,2 +1,2 @@
 # PythonExercises
-My personal experience in using python for data analysis. 
+My personal experience in data cleaning/analyzing using Python 
